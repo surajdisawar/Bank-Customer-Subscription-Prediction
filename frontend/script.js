@@ -1,7 +1,7 @@
 
 // For local testing, run Flask at http://127.0.0.1:5000
 // Change this URL after deploying your backend.
-const API_URL = "http://127.0.0.1:5000";
+const API_URL = "https://bank-customer-subscription-prediction.onrender.com";
 
 function showPage(id) {
   document.querySelectorAll(".page").forEach(
