@@ -1,0 +1,19 @@
+{
+    "project": "Bank Customer Subscription Prediction",
+    "roll_number": 33,
+    "algorithm": "Logistic Regression",
+    "input_features": [
+        "age",
+        "job",
+        "marital",
+        "education",
+        "balance",
+        "housing",
+        "loan",
+        "contact"
+    ],
+    "target": "y",
+    "accuracy": 0.605830164765526,
+    "f1_score": 0.2979683972911964,
+    "sklearn_version": "1.6.1"
+}

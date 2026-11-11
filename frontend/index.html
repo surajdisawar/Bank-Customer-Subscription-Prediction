@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank Prediction | Roll No. 33</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <h2>🏦 BankPredict</h2>
+  <p>Roll No. 33</p>
+  <nav>
+    <button onclick="showPage('dashboard')">Dashboard</button>
+    <button onclick="showPage('predict')">Predict Customer</button>
+    <button onclick="showPage('history')">Prediction History</button>
+    <button onclick="showPage('model')">Model Information</button>
+  </nav>
+</aside>
+
+<main>
+<header>
+  <h1>Bank Customer Subscription</h1>
+  <span class="status">● ML System</span>
+</header>
+
+<section id="dashboard" class="page">
+  <h2>Dashboard Overview</h2>
+  <div class="cards">
+    <div class="card"><p>Total Customers</p><h2 id="total">0</h2></div>
+    <div class="card"><p>YES Predictions</p><h2 id="yes">0</h2></div>
+    <div class="card"><p>NO Predictions</p><h2 id="no">0</h2></div>
+  </div>
+  <button onclick="refreshDashboard()">Refresh Dashboard</button>
+</section>
+
+<section id="predict" class="page hidden">
+  <h2>Customer Prediction</h2>
+  <form id="predictionForm">
+    <div class="form-grid">
+      <label>Age
+        <input type="number" name="age" min="18" max="120" required>
+      </label>
+
+      <label>Job
+        <select name="job" required>
+          <option value="">Select Job</option>
+          <option>admin.</option><option>blue-collar</option>
+          <option>entrepreneur</option><option>housemaid</option>
+          <option>management</option><option>retired</option>
+          <option>self-employed</option><option>services</option>
+          <option>student</option><option>technician</option>
+          <option>unemployed</option><option>unknown</option>
+        </select>
+      </label>
+
+      <label>Marital Status
+        <select name="marital" required>
+          <option value="">Select</option>
+          <option>married</option><option>single</option>
+          <option>divorced</option>
+        </select>
+      </label>
+
+      <label>Education
+        <select name="education" required>
+          <option value="">Select</option>
+          <option>primary</option><option>secondary</option>
+          <option>tertiary</option><option>unknown</option>
+        </select>
+      </label>
+
+      <label>Balance
+        <input type="number" name="balance" required>
+      </label>
+
+      <label>Housing Loan
+        <select name="housing" required>
+          <option value="">Select</option>
+          <option>yes</option><option>no</option>
+        </select>
+      </label>
+
+      <label>Personal Loan
+        <select name="loan" required>
+          <option value="">Select</option>
+          <option>yes</option><option>no</option>
+        </select>
+      </label>
+
+      <label>Contact
+        <select name="contact" required>
+          <option value="">Select</option>
+          <option>cellular</option><option>telephone</option>
+          <option>unknown</option>
+        </select>
+      </label>
+    </div>
+    <button type="submit" id="predictBtn">Predict Subscription</button>
+  </form>
+  <div id="result" class="result hidden"></div>
+</section>
+
+<section id="history" class="page hidden">
+  <h2>Prediction History</h2>
+  <button onclick="downloadHistory()">Download CSV</button>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Age</th><th>Job</th><th>Prediction</th><th>YES Probability</th><th>Date</th></tr></thead>
+      <tbody id="historyBody"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="model" class="page hidden">
+  <h2>Model Information</h2>
+  <div class="card">
+    <p>Selected Algorithm</p><h3 id="algorithm">Loading...</h3>
+    <p>Model Accuracy</p><h2 id="accuracy">--</h2>
+    <p>F1 Score</p><h2 id="f1">--</h2>
+    <p>Input Features</p><p id="features"></p>
+  </div>
+</section>
+
+</main>
+<script src="script.js"></script>
+</body>
+</html>
